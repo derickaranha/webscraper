@@ -1,15 +1,6 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-//var favicon = require('static-favicon');
-//var logger = require('morgan');
-//var cookieParser = require('cookie-parser');
-//var bodyParser = require('body-parser');
-
-//var routes = require('./routes');
-//var users = require('./routes/user');
-//var scraper = require('./routes/scrape');
-//var scraperv1 = require('./routes/scrape-new');
 var scraperv2 = require('./routes/scrapev2');
 console.log("Finished all requires...");
 var app = express();
@@ -18,20 +9,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-//app.use(express.static(__dirname + '/public'));
-
-//app.use(favicon());
-//app.use(logger('dev'));
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded());
-//app.use(cookieParser());
-//app.use(express.static(path.join(__dirname, 'public')));
-//app.use(app.router);
-
-//app.get('/', routes.index);
-//app.get('/users', users.list);
-//app.get('/scrape', scraper.showPage);
-//app.get('/scrapev1', scraperv1.showPage);
 app.get('/scrapev2', scraperv2.showPage);
 
 console.log("Starting Functions...");
@@ -72,6 +49,6 @@ console.log("Reached the End...");
 
 
 
-var server = app.listen(3000, function() {
+var server = app.listen(process.env.PORT, function() {
     console.log('Listening on port %d', server.address().port);
 });
