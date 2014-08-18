@@ -107,7 +107,7 @@ function getTextDetails(node, dets) {
 				cloneDetails.default['bold'] = true;
 			} else if (ele.name == 'strong' || $(ele).css('font-weight') == 'bold') {
 				cloneDetails.default['bold'] = true;
-			} else if (ele.name == 'i' || $(ele).css('font-style') == 'italic') {
+			} else if (ele.name == 'i' || ele.name == 'em' || $(ele).css('font-style') == 'italic') {
 				cloneDetails.default['italic'] = true;
 			} else if (ele.name == 'u' || $(ele).css('text-decoration') == 'underline') {
 				cloneDetails.default['underline'] = true;
